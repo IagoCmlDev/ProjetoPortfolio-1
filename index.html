@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>JoeCamelo | Portfólio</title>
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+
+    <nav class="navegacão">
+        <ul class="menu">
+        <li>
+            <a href="#início" class="menu-link">Início</a>
+        </li>
+        <li>
+            <a href="#sobre"class="menu-link">Sobre</a>
+        </li>
+        <li> 
+            <a href="Projetos"class="menu-link">Projetos</a>
+        </li>
+        <li> 
+            <a href="contatos"class="menu-link">Contatos</a>
+        </li>
+    </nav>
+    <main id="inicio" class="cabecalho">
+            <img src="./img/WhatsApp Image 2025-09-04 at 18.35.47.jpeg" alt="Foto de Iago Rodrigo" class="foto-perfil">
+            <h1>Iago Camelo</h1>
+            <p> Desenvolvedor Full Stack</p>
+    </main>
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo"> 
+                Olá! Me chamo Iago Rodrigo, conhecido como Camelo, sou um dev Full Stack apaixonado por tecnologia e desenolvimento de sites e sistemas!
+            </p>
+        </div>
+    </section>
+    <section id="projetos" class="projetos">
+        <h2 class= "projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            
+            <div class="projetos-card">
+                <img src="./img/projeto1.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Loja de carros</h3>
+                    <p class="paragrafo-projetos">Loja virtual moderna e responsiva com boas animações e design para lojas de carros de luxo</p>
+                    </div>
+            </div>
+        
+            <div class="projetos-card">
+                <img src="./img/italy.webp" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Pagina de viagens</h3>
+                    <p class="paragrafo-projetos">Uma pagina interativa sobre roteiros de viagens incriveis</p>
+                    </div> 
+            </div> 
+            
+            <div class="projetos-card">
+                <img src="./img/OIP.webp" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Loja de moveis</h3>
+                    <p class="paragrafo-projetos">Loja virtual de moveis planejados para varios comodos e ambientes diferentes</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo"> Entre em contato</h2> 
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao-form">Enviar Whatsapp</button>
+        </form>
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone ='5586981649267'
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+            const msgFormatada =  encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+            window.open(url, '_blank')
+        }
+
+    </script>
+
+</body>
+
+</html>
